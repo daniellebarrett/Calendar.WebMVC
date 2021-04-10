@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calendar.WebMVC", "Calendar.WebMVC\Calendar.WebMVC.csproj", "{D45A201C-F596-4026-A866-56670FF8C674}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calendar.Data", "Calendar.Data\Calendar.Data.csproj", "{BDD84199-C544-4E9A-98CD-948E6E7A563D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calendar.Models", "Calendar.Models\Calendar.Models.csproj", "{1C54182A-8EAE-4C13-8A09-3A158F0FAA00}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calendar.Services", "Calendar.Services\Calendar.Services.csproj", "{EFC76EBC-DB49-4F43-8BC2-CC09A996FBF5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D45A201C-F596-4026-A866-56670FF8C674}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D45A201C-F596-4026-A866-56670FF8C674}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D45A201C-F596-4026-A866-56670FF8C674}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D45A201C-F596-4026-A866-56670FF8C674}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BDD84199-C544-4E9A-98CD-948E6E7A563D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDD84199-C544-4E9A-98CD-948E6E7A563D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDD84199-C544-4E9A-98CD-948E6E7A563D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDD84199-C544-4E9A-98CD-948E6E7A563D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C54182A-8EAE-4C13-8A09-3A158F0FAA00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C54182A-8EAE-4C13-8A09-3A158F0FAA00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C54182A-8EAE-4C13-8A09-3A158F0FAA00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C54182A-8EAE-4C13-8A09-3A158F0FAA00}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EFC76EBC-DB49-4F43-8BC2-CC09A996FBF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFC76EBC-DB49-4F43-8BC2-CC09A996FBF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFC76EBC-DB49-4F43-8BC2-CC09A996FBF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFC76EBC-DB49-4F43-8BC2-CC09A996FBF5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {065AB7A1-9338-46DB-A146-2FFE321A34CE}
+	EndGlobalSection
+EndGlobal
