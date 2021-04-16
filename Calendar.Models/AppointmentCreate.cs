@@ -1,23 +1,14 @@
-﻿using System;
+﻿using Calendar.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Calendar.Data
+namespace Calendar.Models
 {
-    public enum AppointmentType
-    {
-        InitialConsultation = 1,
-        CivilLitigation,
-        RealEstate,
-        Family,
-        Criminal,
-        MedicalMalpractice,
-        PersonalInjury
-    }
-    public class Appointment
+    public class AppointmentCreate
     {
         [Key]
         public int AppointmentID { get; set; }
@@ -34,6 +25,7 @@ namespace Calendar.Data
         public AppointmentType TypeOfAppointment { get; set; }
         [Required]
         [MaxLength(100, ErrorMessage = "There are too many characters in this field.")]
+        [Display(Name = "Reason for Appointment")]
         public string AppointmentReason { get; set; }
     }
 }

@@ -16,5 +16,23 @@ namespace Calendar.WebMVC.Controllers
             var model = new AppointmentListItem[0];
             return View(model);
         }
+
+        //GET
+        public ActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create (AppointmentCreate model)
+        {
+            if (ModelState.IsValid)
+            {
+
+            }
+
+            return View(model);
+        }
     }
 }

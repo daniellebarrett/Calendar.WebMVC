@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Calendar.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -14,5 +15,7 @@ namespace Calendar.Models
         [Required]
         [Display(Name = "Date of Desired Appointment")]
         public DateTimeOffset AppointmentDate { get; set; }
+        [Required]
+        public AppointmentType TypeOfAppointment { get; set; }
     }
 }
