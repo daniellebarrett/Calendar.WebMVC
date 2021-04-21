@@ -7,13 +7,13 @@ namespace Calendar.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.0-30225")]
-    public sealed partial class InitialCreate : IMigrationMetadata
+    public sealed partial class AttorneyReg : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialCreate));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(AttorneyReg));
         
         string IMigrationMetadata.Id
         {
-            get { return "202104101731011_InitialCreate"; }
+            get { return "202104210112445_AttorneyReg"; }
         }
         
         string IMigrationMetadata.Source

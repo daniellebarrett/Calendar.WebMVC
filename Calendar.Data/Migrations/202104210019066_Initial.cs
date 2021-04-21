@@ -3,7 +3,7 @@ namespace Calendar.Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class InitialCreate : DbMigration
+    public partial class Initial : DbMigration
     {
         public override void Up()
         {
@@ -15,6 +15,7 @@ namespace Calendar.Data.Migrations
                         AppointmentDate = c.DateTimeOffset(nullable: false, precision: 7),
                         StartTime = c.DateTimeOffset(nullable: false, precision: 7),
                         EndTime = c.DateTimeOffset(nullable: false, precision: 7),
+                        TypeOfAppointment = c.Int(nullable: false),
                         AppointmentReason = c.String(nullable: false, maxLength: 100),
                     })
                 .PrimaryKey(t => t.AppointmentID);
@@ -48,6 +49,10 @@ namespace Calendar.Data.Migrations
                 c => new
                     {
                         Id = c.String(nullable: false, maxLength: 128),
+                        OwnerID = c.Guid(nullable: false),
+                        FirstName = c.String(nullable: false),
+                        LastName = c.String(nullable: false),
+                        Address = c.String(nullable: false),
                         Email = c.String(),
                         EmailConfirmed = c.Boolean(nullable: false),
                         PasswordHash = c.String(),

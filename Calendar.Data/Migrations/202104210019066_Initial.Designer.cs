@@ -7,13 +7,13 @@ namespace Calendar.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.0-30225")]
-    public sealed partial class addedEnumProperty : IMigrationMetadata
+    public sealed partial class Initial : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(addedEnumProperty));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Initial));
         
         string IMigrationMetadata.Id
         {
-            get { return "202104101814376_addedEnumProperty"; }
+            get { return "202104210019066_Initial"; }
         }
         
         string IMigrationMetadata.Source

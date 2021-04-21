@@ -10,7 +10,6 @@ namespace Calendar.Data.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "Calendar.Data.ApplicationDbContext";
         }
 
         protected override void Seed(Calendar.Data.ApplicationDbContext context)

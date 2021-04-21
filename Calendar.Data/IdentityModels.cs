@@ -1,4 +1,6 @@
-﻿using System.Data.Entity;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
+using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Security.Claims;
@@ -18,6 +20,15 @@ namespace Calendar.Data
             // Add custom user claims here
             return userIdentity;
         }
+
+        [Required]
+        public Guid OwnerID { get; set; }
+        [Required]
+        [Display(Name = "First Name")]
+        public string FirstName { get; set; }
+        [Required]
+        [Display(Name = "Last Name")]
+        public string LastName { get; set; }
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
@@ -33,6 +44,7 @@ namespace Calendar.Data
         }
 
         public DbSet<Appointment> Appointments { get; set; }
+        public DbSet<Client> Clients { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder

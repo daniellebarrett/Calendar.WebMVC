@@ -55,18 +55,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Appointment.cs" />
+    <Compile Include="Client.cs" />
     <Compile Include="IdentityModels.cs" />
-    <Compile Include="Migrations\202104101731011_InitialCreate.cs" />
-    <Compile Include="Migrations\202104101731011_InitialCreate.Designer.cs">
-      <DependentUpon>202104101731011_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\202104210019066_Initial.cs" />
+    <Compile Include="Migrations\202104210019066_Initial.Designer.cs">
+      <DependentUpon>202104210019066_Initial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202104101736198_InitialMigration.cs" />
-    <Compile Include="Migrations\202104101736198_InitialMigration.Designer.cs">
-      <DependentUpon>202104101736198_InitialMigration.cs</DependentUpon>
+    <Compile Include="Migrations\202104210112445_AttorneyReg.cs" />
+    <Compile Include="Migrations\202104210112445_AttorneyReg.Designer.cs">
+      <DependentUpon>202104210112445_AttorneyReg.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202104101814376_addedEnumProperty.cs" />
-    <Compile Include="Migrations\202104101814376_addedEnumProperty.Designer.cs">
-      <DependentUpon>202104101814376_addedEnumProperty.cs</DependentUpon>
+    <Compile Include="Migrations\202104210114594_reAddedClientTable.cs" />
+    <Compile Include="Migrations\202104210114594_reAddedClientTable.Designer.cs">
+      <DependentUpon>202104210114594_reAddedClientTable.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -76,14 +77,14 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202104101731011_InitialCreate.resx">
-      <DependentUpon>202104101731011_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202104210019066_Initial.resx">
+      <DependentUpon>202104210019066_Initial.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202104101736198_InitialMigration.resx">
-      <DependentUpon>202104101736198_InitialMigration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202104210112445_AttorneyReg.resx">
+      <DependentUpon>202104210112445_AttorneyReg.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202104101814376_addedEnumProperty.resx">
-      <DependentUpon>202104101814376_addedEnumProperty.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202104210114594_reAddedClientTable.resx">
+      <DependentUpon>202104210114594_reAddedClientTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

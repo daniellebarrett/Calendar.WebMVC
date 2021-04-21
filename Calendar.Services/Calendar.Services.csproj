@@ -54,12 +54,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="AppointmentService.cs" />
+    <Compile Include="ClientService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Calendar.Data\Calendar.Data.csproj">
+      <Project>{bdd84199-c544-4e9a-98cd-948e6e7a563d}</Project>
+      <Name>Calendar.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Calendar.Models\Calendar.Models.csproj">
+      <Project>{1c54182a-8eae-4c13-8a09-3a158f0faa00}</Project>
+      <Name>Calendar.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

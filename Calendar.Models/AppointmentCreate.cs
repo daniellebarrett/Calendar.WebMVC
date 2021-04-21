@@ -10,8 +10,6 @@ namespace Calendar.Models
 {
     public class AppointmentCreate
     {
-        [Key]
-        public int AppointmentID { get; set; }
         [Required]
         [Display(Name = "Date of Desired Appointment")]
         public DateTimeOffset AppointmentDate { get; set; }
