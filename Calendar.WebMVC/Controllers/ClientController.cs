@@ -46,6 +46,73 @@ namespace Calendar.WebMVC.Controllers
             return View(model);
         }
 
+        public ActionResult Details(int id)
+        {
+            var svc = CreateClientService();
+            var model = svc.GetClientById(id);
+
+            return View(model);
+        }
+
+        public ActionResult Edit (int id)
+        {
+            var service = CreateClientService();
+            var detail = service.GetClientById(id);
+            var model =
+                new ClientEdit
+                {
+                    ClientID = detail.ClientID,
+                    FirstName = detail.FirstName,
+                    LastName = detail.LastName,
+                    Address = detail.Address,
+                    Email = detail.Email,
+                    PhoneNumber = detail.PhoneNumber
+                };
+            return View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(int id, ClientEdit model)
+        {
+            if (!ModelState.IsValid) return View(model);
+
+            if(model.ClientID != id)
+            {
+                ModelState.AddModelError("", "Id Mismatch");
+                return View(model);
+            }
+
+            var service = CreateClientService();
+            if (service.UpdateClient(model))
+            {
+                TempData["SaveResult"] = "Your client was updated.";
+                return RedirectToAction("Index");
+            }
+            ModelState.AddModelError("", "Your client could not be updated.");
+            return View(model);
+        }
+        [ActionName("Delete")]
+        public ActionResult Delete(int id)
+        {
+            var svc = CreateClientService();
+            var model = svc.GetClientById(id);
+
+            return View(model);
+        }
+
+        [HttpPost]
+        [ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteClient(int id)
+        {
+            var service = CreateClientService();
+
+            service.DeleteClient(id);
+
+            TempData["SaveResult"] = "Your client was deleted";
+            return RedirectToAction("Index");
+        }
         private ClientService CreateClientService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());

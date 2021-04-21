@@ -42,18 +42,72 @@ namespace Calendar.Services
             {
                 var query =
                     ctx
-                        .Users
+                        .Clients
                         .Where(e => e.OwnerID == _userId)
                         .Select(
                         e =>
                             new ClientListItem
                             {
-                                //ClientID = e.ClientID,
+                                ClientID = e.ClientID,
                                 FirstName = e.FirstName,
                                 LastName = e.LastName,
                             }
                      );
                 return query.ToArray();
+            }
+        }
+
+        public ClientDetail GetClientById(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                    .Clients
+                    .Single(e => e.ClientID == id && e.OwnerID == _userId);
+                return
+                    new ClientDetail
+                    {
+                        ClientID = entity.ClientID,
+                        FirstName = entity.FirstName,
+                        LastName = entity.LastName,
+                        Address = entity.Address,
+                        PhoneNumber = entity.PhoneNumber,
+                        Email = entity.Email
+                    }; 
+            }
+        }
+
+        public bool UpdateClient(ClientEdit model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                    .Clients
+                    .Single(e => e.ClientID == model.ClientID && e.OwnerID == _userId);
+                entity.FirstName = model.FirstName;
+                entity.LastName = model.LastName;
+                entity.Address = model.Address;
+                entity.PhoneNumber = model.PhoneNumber;
+                entity.Email = model.Email;
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
+
+        public bool DeleteClient(int clientId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Clients
+                        .Single(e => e.ClientID == clientId && e.OwnerID == _userId);
+
+                ctx.Clients.Remove(entity);
+
+                return ctx.SaveChanges() == 1;
             }
         }
     }
