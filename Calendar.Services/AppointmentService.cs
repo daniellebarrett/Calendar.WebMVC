@@ -10,18 +10,18 @@ namespace Calendar.Services
     {
         private readonly Guid _userId;
 
-        //public NoteService(Guid userId)
-        //{
-        //    _userId = userId;
-        //}
+        public AppointmentService(Guid userId)
+        {
+            _userId = userId;
+        }
 
-        //public bool CreateAppointment(AppointmentService model)
-        //{
-        //    var entity =
-        //        new AppointmentService()
-        //        {
-                    
-        //        }
-        //}
+        public bool CreateAppointment(AppointmentService model)
+        {
+            var entity =
+                new Appointment()
+                {
+
+                }
+        }
     }
 }
