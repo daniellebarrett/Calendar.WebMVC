@@ -51,6 +51,7 @@ namespace Calendar.Services
                                 ClientID = e.ClientID,
                                 FirstName = e.FirstName,
                                 LastName = e.LastName,
+                                PhoneNumber = e.PhoneNumber
                             }
                      );
                 return query.ToArray();

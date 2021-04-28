@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,19 +12,27 @@ namespace Calendar.Models
     public class AppointmentCreate
     {
         [Required]
-        [Display(Name = "Date of Desired Appointment")]
-        public DateTimeOffset AppointmentDate { get; set; }
+        [Display(Name = "Date Appointment")]
+        [DataType(DataType.Date)]
+        public DateTime AppointmentDate { get; set; }
         [Required]
-        [Display(Name = "Start Time of Desired Appointment")]
-        public DateTimeOffset StartTime { get; set; }
+        [Display(Name = "Start Time")]
+        [DataType(DataType.Time)]
+        public DateTime StartTime { get; set; }
         [Required]
-        [Display(Name = "End Time of Desired Appointment")]
-        public DateTimeOffset EndTime { get; set; }
+        [Display(Name = "Est. End Time ")]
+        [DataType(DataType.Time)]
+        public DateTime EndTime { get; set; }
         [Required]
         public AppointmentType TypeOfAppointment { get; set; }
         [Required]
         [MaxLength(100, ErrorMessage = "There are too many characters in this field.")]
-        [Display(Name = "Reason for Appointment")]
+        [Display(Name = "Summary")]
         public string AppointmentReason { get; set; }
+
+        [ForeignKey(nameof(Client))]
+        public int? ClientId { get; set; }
+
+        public virtual Client Client { get; set; }
     }
 }

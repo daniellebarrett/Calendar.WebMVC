@@ -9,32 +9,32 @@ using System.Threading.Tasks;
 
 namespace Calendar.Models
 {
-    public class AppointmentListItem
+    public class AppointmentDetail
     {
         [Key]
-        [Display(Name = "Appointment ID")]
         public int AppointmentID { get; set; }
         [Required]
         [Display(Name = "Date")]
-        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}")]
+        [DataType(DataType.Date)]
         public DateTime AppointmentDate { get; set; }
         [Required]
         [Display(Name = "Start Time")]
         [DataType(DataType.Time)]
         public DateTime StartTime { get; set; }
         [Required]
-        [Display(Name = "Type")]
+        [Display(Name = "Est. End Time")]
+        [DataType(DataType.Time)]
+        public DateTime EndTime { get; set; }
+        [Required]
         public AppointmentType TypeOfAppointment { get; set; }
+        [Required]
+        [MaxLength(100, ErrorMessage = "There are too many characters in this field.")]
+        [Display(Name ="Summary")]
+        public string AppointmentReason { get; set; }
 
         [ForeignKey(nameof(Client))]
         public int? ClientId { get; set; }
 
         public virtual Client Client { get; set; }
-        [Required]
-        [Display(Name = "First Name")]
-        public string FirstName { get; set; }
-        [Required]
-        [Display(Name = "Last Name")]
-        public string LastName { get; set; }
     }
 }

@@ -9,32 +9,25 @@ using System.Threading.Tasks;
 
 namespace Calendar.Models
 {
-    public class AppointmentListItem
+    public class AppointmentEdit
     {
-        [Key]
-        [Display(Name = "Appointment ID")]
         public int AppointmentID { get; set; }
-        [Required]
-        [Display(Name = "Date")]
-        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}")]
+        [Display(Name = "Date Appointment")]
         public DateTime AppointmentDate { get; set; }
-        [Required]
+        [DataType(DataType.Date)]
         [Display(Name = "Start Time")]
-        [DataType(DataType.Time)]
         public DateTime StartTime { get; set; }
-        [Required]
-        [Display(Name = "Type")]
+        [DataType(DataType.Time)]
+        [Display(Name = "Est. End Time ")]
+        public DateTime EndTime { get; set; }
+        [DataType(DataType.Time)]
         public AppointmentType TypeOfAppointment { get; set; }
+        [Display(Name = "Summary")]
+        public string AppointmentReason { get; set; }
 
         [ForeignKey(nameof(Client))]
         public int? ClientId { get; set; }
 
         public virtual Client Client { get; set; }
-        [Required]
-        [Display(Name = "First Name")]
-        public string FirstName { get; set; }
-        [Required]
-        [Display(Name = "Last Name")]
-        public string LastName { get; set; }
     }
 }

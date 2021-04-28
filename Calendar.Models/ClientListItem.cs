@@ -18,5 +18,8 @@ namespace Calendar.Models
         [Required]
         [Display(Name = "Last Name")]
         public string LastName { get; set; }
+        [Required]
+        [Display(Name = "Phone #")]
+        public string PhoneNumber { get; set; }
     }
 }

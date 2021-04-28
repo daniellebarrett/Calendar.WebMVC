@@ -69,6 +69,22 @@
     <Compile Include="Migrations\202104210114594_reAddedClientTable.Designer.cs">
       <DependentUpon>202104210114594_reAddedClientTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202104222300207_appointmentOwnerId.cs" />
+    <Compile Include="Migrations\202104222300207_appointmentOwnerId.Designer.cs">
+      <DependentUpon>202104222300207_appointmentOwnerId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104230352236_FDatetime.cs" />
+    <Compile Include="Migrations\202104230352236_FDatetime.Designer.cs">
+      <DependentUpon>202104230352236_FDatetime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104230357147_offsetagain.cs" />
+    <Compile Include="Migrations\202104230357147_offsetagain.Designer.cs">
+      <DependentUpon>202104230357147_offsetagain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104280222397_FkeyClientAdded.cs" />
+    <Compile Include="Migrations\202104280222397_FkeyClientAdded.Designer.cs">
+      <DependentUpon>202104280222397_FkeyClientAdded.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -85,6 +101,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202104210114594_reAddedClientTable.resx">
       <DependentUpon>202104210114594_reAddedClientTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104222300207_appointmentOwnerId.resx">
+      <DependentUpon>202104222300207_appointmentOwnerId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104230352236_FDatetime.resx">
+      <DependentUpon>202104230352236_FDatetime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104230357147_offsetagain.resx">
+      <DependentUpon>202104230357147_offsetagain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104280222397_FkeyClientAdded.resx">
+      <DependentUpon>202104280222397_FkeyClientAdded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

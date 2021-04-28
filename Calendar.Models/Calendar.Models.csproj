@@ -55,6 +55,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppointmentCreate.cs" />
+    <Compile Include="AppointmentDetail.cs" />
+    <Compile Include="AppointmentEdit.cs" />
     <Compile Include="AppointmentListItem.cs" />
     <Compile Include="ClientCreate.cs" />
     <Compile Include="ClientDetail.cs" />
