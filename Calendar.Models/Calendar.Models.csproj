@@ -58,6 +58,10 @@
     <Compile Include="AppointmentDetail.cs" />
     <Compile Include="AppointmentEdit.cs" />
     <Compile Include="AppointmentListItem.cs" />
+    <Compile Include="BillCreate.cs" />
+    <Compile Include="BillDetail.cs" />
+    <Compile Include="BillEdit.cs" />
+    <Compile Include="BillListItem.cs" />
     <Compile Include="ClientCreate.cs" />
     <Compile Include="ClientDetail.cs" />
     <Compile Include="ClientListItem.cs" />

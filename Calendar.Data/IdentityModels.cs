@@ -45,6 +45,7 @@ namespace Calendar.Data
 
         public DbSet<Appointment> Appointments { get; set; }
         public DbSet<Client> Clients { get; set; }
+        public DbSet<Bill> Bills { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder

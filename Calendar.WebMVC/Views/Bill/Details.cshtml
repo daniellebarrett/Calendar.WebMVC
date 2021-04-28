@@ -1,0 +1,58 @@
+﻿@model Calendar.Models.BillDetail
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>BillDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.OwnerID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OwnerID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateIssued)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateIssued)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateDue)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateDue)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BillStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BillStatus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BillAmount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BillAmount)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.BillingID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Calendar.Data
+namespace Calendar.Models
 {
-    public class Bill
+    public class BillDetail
     {
         [Key]
         public int BillingID { get; set; }

@@ -5,22 +5,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Calendar.Data
+namespace Calendar.Models
 {
-    public class Bill
+    public class BillListItem
     {
         [Key]
         public int BillingID { get; set; }
-        [Required]
-        public Guid OwnerID { get; set; }
-        [Required]
-        [Display(Name = "Date Issued")]
-        [DataType(DataType.Date)]
-        public DateTime DateIssued { get; set; }
-        [Required]
-        [Display(Name = "Due Date")]
-        [DataType(DataType.Date)]
-        public DateTime DateDue { get; set; }
         [Required]
         [Display(Name = "Paid")]
         public bool BillStatus { get; set; }

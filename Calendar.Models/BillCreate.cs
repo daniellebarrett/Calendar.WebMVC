@@ -5,14 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Calendar.Data
+namespace Calendar.Models
 {
-    public class Bill
+    public class BillCreate
     {
-        [Key]
-        public int BillingID { get; set; }
-        [Required]
-        public Guid OwnerID { get; set; }
         [Required]
         [Display(Name = "Date Issued")]
         [DataType(DataType.Date)]

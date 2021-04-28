@@ -55,6 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Appointment.cs" />
+    <Compile Include="Bill.cs" />
     <Compile Include="Client.cs" />
     <Compile Include="IdentityModels.cs" />
     <Compile Include="Migrations\202104210019066_Initial.cs" />
@@ -85,6 +86,10 @@
     <Compile Include="Migrations\202104280222397_FkeyClientAdded.Designer.cs">
       <DependentUpon>202104280222397_FkeyClientAdded.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202104280608005_addedBillTable.cs" />
+    <Compile Include="Migrations\202104280608005_addedBillTable.Designer.cs">
+      <DependentUpon>202104280608005_addedBillTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -113,6 +118,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202104280222397_FkeyClientAdded.resx">
       <DependentUpon>202104280222397_FkeyClientAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104280608005_addedBillTable.resx">
+      <DependentUpon>202104280608005_addedBillTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
