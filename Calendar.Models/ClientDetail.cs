@@ -12,8 +12,6 @@ namespace Calendar.Models
         [Key]
         public int ClientID { get; set; }
         [Required]
-        public Guid OwnerID { get; set; }
-        [Required]
         [Display(Name = "First Name")]
         public string FirstName { get; set; }
         [Required]
