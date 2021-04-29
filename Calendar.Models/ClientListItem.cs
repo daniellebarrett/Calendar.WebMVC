@@ -14,9 +14,11 @@ namespace Calendar.Models
         public int ClientID { get; set; }
         [Required]
         [Display(Name = "First Name")]
+        [RegularExpression(@"^[a-zA-Z]+$", ErrorMessage = "Use letters only please")]
         public string FirstName { get; set; }
         [Required]
         [Display(Name = "Last Name")]
+        [RegularExpression(@"^[a-zA-Z]+$", ErrorMessage = "Use letters only please")]
         public string LastName { get; set; }
         [Required]
         [Display(Name = "Phone #")]

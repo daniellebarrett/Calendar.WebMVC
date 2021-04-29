@@ -31,7 +31,7 @@ namespace Calendar.Models
         public string AppointmentReason { get; set; }
 
         [ForeignKey(nameof(Client))]
-        public int? ClientId { get; set; }
+        public int ClientId { get; set; }
 
         public virtual Client Client { get; set; }
     }

@@ -44,7 +44,8 @@ namespace Calendar.Data
         public string AppointmentReason { get; set; }
 
         [ForeignKey(nameof(Client))]
-        public int? ClientId { get; set; }
+        [Display(Name = "Client ID")]
+        public int ClientId { get; set; }
 
         public virtual Client Client { get; set; }
     }

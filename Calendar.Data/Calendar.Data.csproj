@@ -94,6 +94,10 @@
     <Compile Include="Migrations\202104290259245_FKClientToBillTable.Designer.cs">
       <DependentUpon>202104290259245_FKClientToBillTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202104292201430_testing.cs" />
+    <Compile Include="Migrations\202104292201430_testing.Designer.cs">
+      <DependentUpon>202104292201430_testing.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -128,6 +132,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202104290259245_FKClientToBillTable.resx">
       <DependentUpon>202104290259245_FKClientToBillTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104292201430_testing.resx">
+      <DependentUpon>202104292201430_testing.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
