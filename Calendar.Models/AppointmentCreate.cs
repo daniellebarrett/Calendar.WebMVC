@@ -11,9 +11,10 @@ namespace Calendar.Models
 {
     public class AppointmentCreate
     {
-        [Required]
+        [Required(ErrorMessage = "Appointment Date cannot be prior to today's date")]
         [Display(Name = "Date Appointment")]
         [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}")]
         public DateTime AppointmentDate { get; set; }
         [Required]
         [Display(Name = "Start Time")]
