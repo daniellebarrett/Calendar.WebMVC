@@ -66,6 +66,7 @@ namespace Calendar.WebMVC.Controllers
                     DateDue = detail.DateDue,
                     BillStatus = detail.BillStatus,
                     BillAmount = detail.BillAmount,
+                    ClientId = detail.ClientId,
                 };
             return View(model);
         }

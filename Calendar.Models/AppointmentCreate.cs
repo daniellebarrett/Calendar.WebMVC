@@ -11,9 +11,10 @@ namespace Calendar.Models
 {
     public class AppointmentCreate
     {
-        [Required]
+        [Required(ErrorMessage = "Appointment Date cannot be prior to today's date")]
         [Display(Name = "Date Appointment")]
         [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}")]
         public DateTime AppointmentDate { get; set; }
         [Required]
         [Display(Name = "Start Time")]
@@ -24,6 +25,7 @@ namespace Calendar.Models
         [DataType(DataType.Time)]
         public DateTime EndTime { get; set; }
         [Required]
+        [Display(Name = "Apt. Type")]
         public AppointmentType TypeOfAppointment { get; set; }
         [Required]
         [MaxLength(100, ErrorMessage = "There are too many characters in this field.")]
@@ -31,8 +33,12 @@ namespace Calendar.Models
         public string AppointmentReason { get; set; }
 
         [ForeignKey(nameof(Client))]
-        public int? ClientId { get; set; }
+        [Display(Name = "Client")]
+        public int ClientId { get; set; }
 
         public virtual Client Client { get; set; }
+        
+
+        public string FullName { get; set; }
     }
 }

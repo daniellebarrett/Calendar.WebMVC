@@ -90,6 +90,34 @@
     <Compile Include="Migrations\202104280608005_addedBillTable.Designer.cs">
       <DependentUpon>202104280608005_addedBillTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202104290259245_FKClientToBillTable.cs" />
+    <Compile Include="Migrations\202104290259245_FKClientToBillTable.Designer.cs">
+      <DependentUpon>202104290259245_FKClientToBillTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104292201430_testing.cs" />
+    <Compile Include="Migrations\202104292201430_testing.Designer.cs">
+      <DependentUpon>202104292201430_testing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104300101361_addedFullName.cs" />
+    <Compile Include="Migrations\202104300101361_addedFullName.Designer.cs">
+      <DependentUpon>202104300101361_addedFullName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105070140361_changed fullname prop to clientinfo.cs" />
+    <Compile Include="Migrations\202105070140361_changed fullname prop to clientinfo.Designer.cs">
+      <DependentUpon>202105070140361_changed fullname prop to clientinfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105070158583_addedclientinfo.cs" />
+    <Compile Include="Migrations\202105070158583_addedclientinfo.Designer.cs">
+      <DependentUpon>202105070158583_addedclientinfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105070330228_changingbacktofullnameprop.cs" />
+    <Compile Include="Migrations\202105070330228_changingbacktofullnameprop.Designer.cs">
+      <DependentUpon>202105070330228_changingbacktofullnameprop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105070413014_wtf.cs" />
+    <Compile Include="Migrations\202105070413014_wtf.Designer.cs">
+      <DependentUpon>202105070413014_wtf.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -121,6 +149,27 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202104280608005_addedBillTable.resx">
       <DependentUpon>202104280608005_addedBillTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104290259245_FKClientToBillTable.resx">
+      <DependentUpon>202104290259245_FKClientToBillTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104292201430_testing.resx">
+      <DependentUpon>202104292201430_testing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104300101361_addedFullName.resx">
+      <DependentUpon>202104300101361_addedFullName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105070140361_changed fullname prop to clientinfo.resx">
+      <DependentUpon>202105070140361_changed fullname prop to clientinfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105070158583_addedclientinfo.resx">
+      <DependentUpon>202105070158583_addedclientinfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105070330228_changingbacktofullnameprop.resx">
+      <DependentUpon>202105070330228_changingbacktofullnameprop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105070413014_wtf.resx">
+      <DependentUpon>202105070413014_wtf.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

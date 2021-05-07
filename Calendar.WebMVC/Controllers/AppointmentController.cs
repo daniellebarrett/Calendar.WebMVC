@@ -1,4 +1,5 @@
-﻿using Calendar.Models;
+﻿using Calendar.Data;
+using Calendar.Models;
 using Calendar.Services;
 using Microsoft.AspNet.Identity;
 using System;
@@ -12,6 +13,8 @@ namespace Calendar.WebMVC.Controllers
     [Authorize]
     public class AppointmentController : Controller
     {
+        private ApplicationDbContext _db = new ApplicationDbContext();
+
         // GET: Appointment
         public ActionResult Index()
         {
@@ -25,6 +28,10 @@ namespace Calendar.WebMVC.Controllers
         //GET
         public ActionResult Create()
         {
+                var userId = Guid.Parse(User.Identity.GetUserId());
+                var service = new ClientService(userId);
+                
+            ViewBag.ClientId = new SelectList(service.GetClients(), "ClientId", "FullName");
             return View();
         }
 

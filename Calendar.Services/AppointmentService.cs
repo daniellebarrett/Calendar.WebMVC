@@ -19,25 +19,35 @@ namespace Calendar.Services
 
         public bool CreateAppointment(AppointmentCreate model)
         {
-            var entity =
-                new Appointment()
+           // if (model.AppointmentDate > DateTime.Now)
+            //{
+                var entity =
+                                new Appointment()
+                                {
+                                    OwnerID = _userId,
+                                    AppointmentDate = model.AppointmentDate,
+                                    StartTime = model.StartTime,
+                                    EndTime = model.EndTime,
+                                    TypeOfAppointment = model.TypeOfAppointment,
+                                    AppointmentReason = model.AppointmentReason,
+                                    ClientId = model.ClientId,
+                                };
+                using (var ctx = new ApplicationDbContext())
                 {
-                    OwnerID = _userId,
-                    AppointmentDate = model.AppointmentDate,
-                    StartTime = model.StartTime,
-                    EndTime = model.EndTime,
-                    TypeOfAppointment = model.TypeOfAppointment,
-                    AppointmentReason = model.AppointmentReason,
-                    ClientId = model.ClientId
-                };
-            using (var ctx = new ApplicationDbContext())
-            {
-                ctx.Appointments.Add(entity);
-                return ctx.SaveChanges() == 1;
-            }
+                    ctx.Appointments.Add(entity);
+                    return ctx.SaveChanges() == 1;
+                }
+            //}
+            //else
+            //{
+
+            //    return false;
+            //}
         }
 
-        public IEnumerable<AppointmentListItem> GetAppointments()
+
+
+            public IEnumerable<AppointmentListItem> GetAppointments()
         {
             using (var ctx = new ApplicationDbContext())
             {

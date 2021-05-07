@@ -24,9 +24,10 @@ namespace Calendar.Data
         public int AppointmentID { get; set; }
         [Required]
         public Guid OwnerID { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Appointment Date cannot be prior to today's date")]
         [Display(Name = "Date")]
         [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}")]
         public DateTime AppointmentDate { get; set; }
         [Required]
         [Display(Name = "Start Time")]
@@ -44,7 +45,8 @@ namespace Calendar.Data
         public string AppointmentReason { get; set; }
 
         [ForeignKey(nameof(Client))]
-        public int? ClientId { get; set; }
+        [Display(Name = "Client ID")]
+        public int ClientId { get; set; }
 
         public virtual Client Client { get; set; }
     }

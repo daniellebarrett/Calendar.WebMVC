@@ -27,7 +27,7 @@ namespace Calendar.Services
                     LastName = model.LastName,
                     Address = model.Address,
                     PhoneNumber = model.PhoneNumber,
-                    Email = model.Email
+                    Email = model.Email,
                 };
             using (var ctx = new ApplicationDbContext())
             {
@@ -51,9 +51,10 @@ namespace Calendar.Services
                                 ClientID = e.ClientID,
                                 FirstName = e.FirstName,
                                 LastName = e.LastName,
-                                PhoneNumber = e.PhoneNumber
+                                PhoneNumber = e.PhoneNumber,
+                                FullName = e.FullName
                             }
-                     );
+                     ) ;
                 return query.ToArray();
             }
         }

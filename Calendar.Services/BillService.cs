@@ -26,7 +26,8 @@ namespace Calendar.Services
                     DateIssued = model.DateIssued,
                     DateDue = model.DateDue,
                     BillStatus = model.BillStatus,
-                    BillAmount = model.BillAmount
+                    BillAmount = model.BillAmount,
+                    ClientId = model.ClientId
                 };
             using (var ctx = new ApplicationDbContext())
             {
@@ -50,6 +51,9 @@ namespace Calendar.Services
                                 BillingID = e.BillingID,
                                 BillStatus = e.BillStatus,
                                 BillAmount = e.BillAmount,
+                                ClientId = e.ClientId,
+                                FirstName = e.Client.FirstName,
+                                LastName = e.Client.LastName
                             }
                      );
                 return query.ToArray();
@@ -72,7 +76,34 @@ namespace Calendar.Services
                         DateDue = entity.DateDue,
                         BillStatus = entity.BillStatus,
                         BillAmount = entity.BillAmount,
+                        ClientId = entity.ClientId,
+                        Client = entity.Client
                     };
+            }
+        }
+
+        public IEnumerable<BillListItem> GetBillByClientId(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var query =
+                    ctx
+                    .Bills
+                    .Where(e => e.OwnerID == _userId && e.ClientId == id)
+                    .Select(
+                        e =>
+                        new BillListItem
+                        {
+                            BillingID = e.BillingID,
+                            BillAmount = e.BillAmount,
+                            BillStatus = e.BillStatus,
+                            ClientId = e.ClientId,
+                            Client = e.Client,
+                            FirstName = e.Client.FirstName,
+                            LastName = e.Client.LastName
+                        }
+                        );
+                return query.ToArray();
             }
         }
 
@@ -88,6 +119,7 @@ namespace Calendar.Services
                 entity.DateDue = model.DateDue;
                 entity.BillStatus = model.BillStatus;
                 entity.BillAmount = model.BillAmount;
+                entity.ClientId = model.ClientId;
 
                 return ctx.SaveChanges() == 1;
             }
