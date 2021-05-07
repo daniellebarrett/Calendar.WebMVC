@@ -25,6 +25,7 @@ namespace Calendar.Models
         [DataType(DataType.Time)]
         public DateTime EndTime { get; set; }
         [Required]
+        [Display(Name = "Apt. Type")]
         public AppointmentType TypeOfAppointment { get; set; }
         [Required]
         [MaxLength(100, ErrorMessage = "There are too many characters in this field.")]
@@ -32,8 +33,12 @@ namespace Calendar.Models
         public string AppointmentReason { get; set; }
 
         [ForeignKey(nameof(Client))]
+        [Display(Name = "Client")]
         public int ClientId { get; set; }
 
         public virtual Client Client { get; set; }
+        
+
+        public string FullName { get; set; }
     }
 }

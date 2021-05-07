@@ -23,5 +23,6 @@ namespace Calendar.Models
         [Required]
         [Display(Name = "Phone #")]
         public string PhoneNumber { get; set; }
+        public string FullName { get; set; }
     }
 }

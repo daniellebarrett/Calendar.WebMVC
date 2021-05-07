@@ -102,6 +102,22 @@
     <Compile Include="Migrations\202104300101361_addedFullName.Designer.cs">
       <DependentUpon>202104300101361_addedFullName.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202105070140361_changed fullname prop to clientinfo.cs" />
+    <Compile Include="Migrations\202105070140361_changed fullname prop to clientinfo.Designer.cs">
+      <DependentUpon>202105070140361_changed fullname prop to clientinfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105070158583_addedclientinfo.cs" />
+    <Compile Include="Migrations\202105070158583_addedclientinfo.Designer.cs">
+      <DependentUpon>202105070158583_addedclientinfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105070330228_changingbacktofullnameprop.cs" />
+    <Compile Include="Migrations\202105070330228_changingbacktofullnameprop.Designer.cs">
+      <DependentUpon>202105070330228_changingbacktofullnameprop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105070413014_wtf.cs" />
+    <Compile Include="Migrations\202105070413014_wtf.Designer.cs">
+      <DependentUpon>202105070413014_wtf.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -142,6 +158,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202104300101361_addedFullName.resx">
       <DependentUpon>202104300101361_addedFullName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105070140361_changed fullname prop to clientinfo.resx">
+      <DependentUpon>202105070140361_changed fullname prop to clientinfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105070158583_addedclientinfo.resx">
+      <DependentUpon>202105070158583_addedclientinfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105070330228_changingbacktofullnameprop.resx">
+      <DependentUpon>202105070330228_changingbacktofullnameprop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105070413014_wtf.resx">
+      <DependentUpon>202105070413014_wtf.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

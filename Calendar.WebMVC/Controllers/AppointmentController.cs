@@ -28,7 +28,10 @@ namespace Calendar.WebMVC.Controllers
         //GET
         public ActionResult Create()
         {
-            ViewBag.ClientId = new SelectList(_db.Clients, "ClientId", "FullName");
+                var userId = Guid.Parse(User.Identity.GetUserId());
+                var service = new ClientService(userId);
+                
+            ViewBag.ClientId = new SelectList(service.GetClients(), "ClientId", "FullName");
             return View();
         }
 

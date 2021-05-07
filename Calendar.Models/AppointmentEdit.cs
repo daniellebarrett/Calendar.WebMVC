@@ -12,16 +12,24 @@ namespace Calendar.Models
     public class AppointmentEdit
     {
         public int AppointmentID { get; set; }
+
         [Display(Name = "Date Appointment")]
-        public DateTime AppointmentDate { get; set; }
         [DataType(DataType.Date)]
+        public DateTime AppointmentDate { get; set; }
+
+        
         [Display(Name = "Start Time")]
+        [DataType(DataType.Time)]
         public DateTime StartTime { get; set; }
-        [DataType(DataType.Time)]
+
+        
         [Display(Name = "Est. End Time ")]
-        public DateTime EndTime { get; set; }
         [DataType(DataType.Time)]
+        public DateTime EndTime { get; set; }
+        
+        [Display(Name ="Apt. Type")]
         public AppointmentType TypeOfAppointment { get; set; }
+
         [Display(Name = "Summary")]
         public string AppointmentReason { get; set; }
 

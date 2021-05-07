@@ -1,24 +1,18 @@
 ﻿@model Calendar.Models.AppointmentCreate
 
-@{
-    ViewBag.Title = "Create";
-}
 
-<h2>Attorney Office</h2>
-
-
-@using (Html.BeginForm())
+@using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()
-
+    
 <div class="form-horizontal">
-    <h4>Schedule an Appointment</h4>
+    <h4>AppointmentCreate</h4>
     <hr />
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
     <div class="form-group">
         @Html.LabelFor(model => model.AppointmentDate, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.EditorFor(model => model.AppointmentDate, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.EditorFor(model => model.AppointmentDate, new { htmlAttributes = new { @class = "form-control", min = ($"{DateTime.Now.ToString("yyyy-MM-dd")}") } })
             @Html.ValidationMessageFor(model => model.AppointmentDate, "", new { @class = "text-danger" })
         </div>
     </div>
@@ -26,16 +20,24 @@
     <div class="form-group">
         @Html.LabelFor(model => model.StartTime, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.EditorFor(model => model.StartTime, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.StartTime, "", new { @class = "text-danger", @placeholder = "00:00am/pm" })
+            @Html.EditorFor(model => model.StartTime, new { htmlAttributes = new { @class = "form-control", min = "08:00", max = "17:00:" } })
+            @Html.ValidationMessageFor(model => model.StartTime, "", new { @class = "text-danger" })
         </div>
     </div>
 
     <div class="form-group">
         @Html.LabelFor(model => model.EndTime, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.EditorFor(model => model.EndTime, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.EndTime, "", new { @class = "text-danger", @placeholder = "00:00am/pm" })
+            @Html.EditorFor(model => model.EndTime, new { htmlAttributes = new { @class = "form-control", min = "08:00", max = "17:00:" } })
+            @Html.ValidationMessageFor(model => model.EndTime, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.AppointmentReason, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.AppointmentReason, new { htmlAttributes = new { @class = "form-control", @placeholder = "Enter Summary of Appointment Request" } })
+            @Html.ValidationMessageFor(model => model.AppointmentReason, "", new { @class = "text-danger" })
         </div>
     </div>
 
@@ -47,29 +49,13 @@
         </div>
     </div>
 
-    @*<select class="form-control" id="AppointmentType" name="AppointmentType">
-        <option>Select Type of Appointment</option>
-        <option>Initial Consultation</option>
-        <option>Civil Litigation</option>
-        <option>Real Estate</option>
-        <option>Family Law</option>
-        <option>Criminal Law</option>
-        <option>Medical Malpractice</option>
-        <option>Personal Injury</option>
-    </select>*@
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.AppointmentReason, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.AppointmentReason, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.AppointmentReason, "", new { @class = "text-danger", @placeholder = "Enter Summary of Appointment Request" })
-        </div>
-    </div>
-
     <div class="form-group">
         @Html.LabelFor(model => model.ClientId, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.DropDownList("ClientId", null, new { htmlAttributes = new { @class = "form-control" } } )            
+            @Html.DropDownList("ClientId", null, new { htmlAttributes = new { @class = "form-control" } })
+            @*@Html.DropDownList("ClientId", ViewBag.Clients as List<SelectListItem>, "Select Client")*@
+
+
             @Html.ValidationMessageFor(model => model.ClientId, "", new { @class = "text-danger" })
         </div>
     </div>
