@@ -23,6 +23,7 @@ namespace Calendar.Models
         [Display(Name = "Paid")]
         public bool BillStatus { get; set; }
         [Required]
+        [Display(Name = "Amount")]
         public double BillAmount { get; set; }
 
         [ForeignKey(nameof(Client))]

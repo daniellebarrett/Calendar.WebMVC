@@ -1,8 +1,11 @@
 ﻿@model Calendar.Models.ClientDetail
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Client Details</h2>
 
 <div>
-    <h4>ClientDetail</h4>
-    <hr />
     <dl class="dl-horizontal">
         <dt>
             @Html.DisplayNameFor(model => model.FirstName)

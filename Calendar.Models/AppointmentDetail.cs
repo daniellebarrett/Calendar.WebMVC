@@ -14,7 +14,7 @@ namespace Calendar.Models
         [Key]
         public int AppointmentID { get; set; }
         [Required]
-        [Display(Name = "Date")]
+        [Display(Name = "Apt. Date")]
         [DataType(DataType.Date)]
         public DateTime AppointmentDate { get; set; }
         [Required]
@@ -26,6 +26,7 @@ namespace Calendar.Models
         [DataType(DataType.Time)]
         public DateTime EndTime { get; set; }
         [Required]
+        [Display(Name = "Apt. Type")]
         public AppointmentType TypeOfAppointment { get; set; }
         [Required]
         [MaxLength(100, ErrorMessage = "There are too many characters in this field.")]
