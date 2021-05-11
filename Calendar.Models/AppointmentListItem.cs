@@ -15,7 +15,7 @@ namespace Calendar.Models
         [Display(Name = "Appointment ID")]
         public int AppointmentID { get; set; }
         [Required]
-        [Display(Name = "Date")]
+        [Display(Name = "Apt. Date")]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}")]
         public DateTime AppointmentDate { get; set; }
         [Required]
@@ -23,7 +23,7 @@ namespace Calendar.Models
         [DataType(DataType.Time)]
         public DateTime StartTime { get; set; }
         [Required]
-        [Display(Name = "Type")]
+        [Display(Name = "Apt. Type")]
         public AppointmentType TypeOfAppointment { get; set; }
 
         [ForeignKey(nameof(Client))]

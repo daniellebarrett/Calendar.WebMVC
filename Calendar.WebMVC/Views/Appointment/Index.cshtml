@@ -4,10 +4,10 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Appointment Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create New", "Create", new { @style = "color: white;" })
 </p>
 <table class="table">
     <tr>
@@ -53,9 +53,9 @@
             @Html.DisplayFor(modelItem => item.TypeOfAppointment)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.AppointmentID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.AppointmentID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.AppointmentID })
+            @Html.ActionLink("Edit", "Edit", new { id=item.AppointmentID }, new { @style = "color: red;" }) |
+            @Html.ActionLink("Details", "Details", new { id=item.AppointmentID }, new { @style = "color: red;" }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.AppointmentID }, new { @style = "color: red;" })
         </td>
     </tr>
 }

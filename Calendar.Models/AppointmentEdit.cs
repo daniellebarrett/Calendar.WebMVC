@@ -13,7 +13,7 @@ namespace Calendar.Models
     {
         public int AppointmentID { get; set; }
 
-        [Display(Name = "Date Appointment")]
+        [Display(Name = "Apt. Date")]
         [DataType(DataType.Date)]
         public DateTime AppointmentDate { get; set; }
 

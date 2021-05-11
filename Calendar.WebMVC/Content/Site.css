@@ -1,6 +1,17 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    background-color: black;
+    display:flex;
+}
+
+.jumbotron{
+    background-image:url("Assets/law-firm.jpg");
+    background-repeat:no-repeat;
+    background-size:cover;
+    height:70vh;
+    display:flex;
+    
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -21,4 +32,53 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+
+.table{
+    color: white;
+    display:flex;
+}
+
+a{
+    color: red;
+}
+
+.tracker{
+    color:white;
+    background:gray;
+    display:flex;
+    justify-content:center;
+    width:600px;
+    height:100px;
+}
+h2{
+    color: white;
+}
+
+h3{
+    color:white;
+}
+
+.form-group{
+    color:white;
+}
+
+#TypeOfAppointment{
+    color:black;
+}
+
+dd{
+    color:white;
+}
+
+dt{
+    color:white;
+}
+
+#ClientId{
+    color:black;
+}
+
+.check-box{
+    color:cornflowerblue;
 }
