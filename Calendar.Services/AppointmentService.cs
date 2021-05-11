@@ -37,12 +37,6 @@ namespace Calendar.Services
                     ctx.Appointments.Add(entity);
                     return ctx.SaveChanges() == 1;
                 }
-            //}
-            //else
-            //{
-
-            //    return false;
-            //}
         }
 
 

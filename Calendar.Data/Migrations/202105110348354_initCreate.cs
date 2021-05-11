@@ -3,7 +3,7 @@ namespace Calendar.Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class Initial : DbMigration
+    public partial class initCreate : DbMigration
     {
         public override void Up()
         {
@@ -12,13 +12,48 @@ namespace Calendar.Data.Migrations
                 c => new
                     {
                         AppointmentID = c.Int(nullable: false, identity: true),
-                        AppointmentDate = c.DateTimeOffset(nullable: false, precision: 7),
-                        StartTime = c.DateTimeOffset(nullable: false, precision: 7),
-                        EndTime = c.DateTimeOffset(nullable: false, precision: 7),
+                        OwnerID = c.Guid(nullable: false),
+                        AppointmentDate = c.DateTime(nullable: false),
+                        StartTime = c.DateTime(nullable: false),
+                        EndTime = c.DateTime(nullable: false),
                         TypeOfAppointment = c.Int(nullable: false),
                         AppointmentReason = c.String(nullable: false, maxLength: 100),
+                        ClientId = c.Int(nullable: false),
                     })
-                .PrimaryKey(t => t.AppointmentID);
+                .PrimaryKey(t => t.AppointmentID)
+                .ForeignKey("dbo.Client", t => t.ClientId, cascadeDelete: true)
+                .Index(t => t.ClientId);
+            
+            CreateTable(
+                "dbo.Client",
+                c => new
+                    {
+                        ClientID = c.Int(nullable: false, identity: true),
+                        OwnerID = c.Guid(nullable: false),
+                        FirstName = c.String(nullable: false),
+                        LastName = c.String(nullable: false),
+                        Address = c.String(nullable: false),
+                        PhoneNumber = c.String(nullable: false),
+                        Email = c.String(nullable: false),
+                        FullName = c.String(),
+                    })
+                .PrimaryKey(t => t.ClientID);
+            
+            CreateTable(
+                "dbo.Bill",
+                c => new
+                    {
+                        BillingID = c.Int(nullable: false, identity: true),
+                        OwnerID = c.Guid(nullable: false),
+                        DateIssued = c.DateTime(nullable: false),
+                        DateDue = c.DateTime(nullable: false),
+                        BillStatus = c.Boolean(nullable: false),
+                        BillAmount = c.Double(nullable: false),
+                        ClientId = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => t.BillingID)
+                .ForeignKey("dbo.Client", t => t.ClientId, cascadeDelete: true)
+                .Index(t => t.ClientId);
             
             CreateTable(
                 "dbo.IdentityRole",
@@ -52,7 +87,6 @@ namespace Calendar.Data.Migrations
                         OwnerID = c.Guid(nullable: false),
                         FirstName = c.String(nullable: false),
                         LastName = c.String(nullable: false),
-                        Address = c.String(nullable: false),
                         Email = c.String(),
                         EmailConfirmed = c.Boolean(nullable: false),
                         PasswordHash = c.String(),
@@ -102,15 +136,21 @@ namespace Calendar.Data.Migrations
             DropForeignKey("dbo.IdentityUserLogin", "ApplicationUser_Id", "dbo.ApplicationUser");
             DropForeignKey("dbo.IdentityUserClaim", "ApplicationUser_Id", "dbo.ApplicationUser");
             DropForeignKey("dbo.IdentityUserRole", "IdentityRole_Id", "dbo.IdentityRole");
+            DropForeignKey("dbo.Bill", "ClientId", "dbo.Client");
+            DropForeignKey("dbo.Appointment", "ClientId", "dbo.Client");
             DropIndex("dbo.IdentityUserLogin", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserClaim", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserRole", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserRole", new[] { "IdentityRole_Id" });
+            DropIndex("dbo.Bill", new[] { "ClientId" });
+            DropIndex("dbo.Appointment", new[] { "ClientId" });
             DropTable("dbo.IdentityUserLogin");
             DropTable("dbo.IdentityUserClaim");
             DropTable("dbo.ApplicationUser");
             DropTable("dbo.IdentityUserRole");
             DropTable("dbo.IdentityRole");
+            DropTable("dbo.Bill");
+            DropTable("dbo.Client");
             DropTable("dbo.Appointment");
         }
     }

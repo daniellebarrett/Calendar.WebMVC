@@ -58,65 +58,9 @@
     <Compile Include="Bill.cs" />
     <Compile Include="Client.cs" />
     <Compile Include="IdentityModels.cs" />
-    <Compile Include="Migrations\202104210019066_Initial.cs" />
-    <Compile Include="Migrations\202104210019066_Initial.Designer.cs">
-      <DependentUpon>202104210019066_Initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202104210112445_AttorneyReg.cs" />
-    <Compile Include="Migrations\202104210112445_AttorneyReg.Designer.cs">
-      <DependentUpon>202104210112445_AttorneyReg.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202104210114594_reAddedClientTable.cs" />
-    <Compile Include="Migrations\202104210114594_reAddedClientTable.Designer.cs">
-      <DependentUpon>202104210114594_reAddedClientTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202104222300207_appointmentOwnerId.cs" />
-    <Compile Include="Migrations\202104222300207_appointmentOwnerId.Designer.cs">
-      <DependentUpon>202104222300207_appointmentOwnerId.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202104230352236_FDatetime.cs" />
-    <Compile Include="Migrations\202104230352236_FDatetime.Designer.cs">
-      <DependentUpon>202104230352236_FDatetime.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202104230357147_offsetagain.cs" />
-    <Compile Include="Migrations\202104230357147_offsetagain.Designer.cs">
-      <DependentUpon>202104230357147_offsetagain.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202104280222397_FkeyClientAdded.cs" />
-    <Compile Include="Migrations\202104280222397_FkeyClientAdded.Designer.cs">
-      <DependentUpon>202104280222397_FkeyClientAdded.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202104280608005_addedBillTable.cs" />
-    <Compile Include="Migrations\202104280608005_addedBillTable.Designer.cs">
-      <DependentUpon>202104280608005_addedBillTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202104290259245_FKClientToBillTable.cs" />
-    <Compile Include="Migrations\202104290259245_FKClientToBillTable.Designer.cs">
-      <DependentUpon>202104290259245_FKClientToBillTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202104292201430_testing.cs" />
-    <Compile Include="Migrations\202104292201430_testing.Designer.cs">
-      <DependentUpon>202104292201430_testing.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202104300101361_addedFullName.cs" />
-    <Compile Include="Migrations\202104300101361_addedFullName.Designer.cs">
-      <DependentUpon>202104300101361_addedFullName.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202105070140361_changed fullname prop to clientinfo.cs" />
-    <Compile Include="Migrations\202105070140361_changed fullname prop to clientinfo.Designer.cs">
-      <DependentUpon>202105070140361_changed fullname prop to clientinfo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202105070158583_addedclientinfo.cs" />
-    <Compile Include="Migrations\202105070158583_addedclientinfo.Designer.cs">
-      <DependentUpon>202105070158583_addedclientinfo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202105070330228_changingbacktofullnameprop.cs" />
-    <Compile Include="Migrations\202105070330228_changingbacktofullnameprop.Designer.cs">
-      <DependentUpon>202105070330228_changingbacktofullnameprop.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202105070413014_wtf.cs" />
-    <Compile Include="Migrations\202105070413014_wtf.Designer.cs">
-      <DependentUpon>202105070413014_wtf.cs</DependentUpon>
+    <Compile Include="Migrations\202105110348354_initCreate.cs" />
+    <Compile Include="Migrations\202105110348354_initCreate.Designer.cs">
+      <DependentUpon>202105110348354_initCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -126,50 +70,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202104210019066_Initial.resx">
-      <DependentUpon>202104210019066_Initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202104210112445_AttorneyReg.resx">
-      <DependentUpon>202104210112445_AttorneyReg.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202104210114594_reAddedClientTable.resx">
-      <DependentUpon>202104210114594_reAddedClientTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202104222300207_appointmentOwnerId.resx">
-      <DependentUpon>202104222300207_appointmentOwnerId.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202104230352236_FDatetime.resx">
-      <DependentUpon>202104230352236_FDatetime.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202104230357147_offsetagain.resx">
-      <DependentUpon>202104230357147_offsetagain.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202104280222397_FkeyClientAdded.resx">
-      <DependentUpon>202104280222397_FkeyClientAdded.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202104280608005_addedBillTable.resx">
-      <DependentUpon>202104280608005_addedBillTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202104290259245_FKClientToBillTable.resx">
-      <DependentUpon>202104290259245_FKClientToBillTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202104292201430_testing.resx">
-      <DependentUpon>202104292201430_testing.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202104300101361_addedFullName.resx">
-      <DependentUpon>202104300101361_addedFullName.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202105070140361_changed fullname prop to clientinfo.resx">
-      <DependentUpon>202105070140361_changed fullname prop to clientinfo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202105070158583_addedclientinfo.resx">
-      <DependentUpon>202105070158583_addedclientinfo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202105070330228_changingbacktofullnameprop.resx">
-      <DependentUpon>202105070330228_changingbacktofullnameprop.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202105070413014_wtf.resx">
-      <DependentUpon>202105070413014_wtf.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202105110348354_initCreate.resx">
+      <DependentUpon>202105110348354_initCreate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
